@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>太极</title>
+ </head>
+ <body>
+ 	 
+	<canvas id="mycanvas"></canvas>
+	<script>
+		var mycanvas=document.getElementById('mycanvas');
+		mycanvas.width="400";
+		mycanvas.height="500";
+		var cvs=mycanvas.getContext("2d");
+		cvs.arc(50,50,50,0,2*Math.PI);		
+		cvs.stroke();
+		cvs.fillStyle="#000";
+		cvs.fill();
+
+		cvs.beginPath();
+		cvs.arc(50,50,50,0,1*Math.PI);
+		cvs.strokeStyle="#fff";
+		cvs.stroke();
+		cvs.fillStyle="#fff";
+		cvs.fill();
+
+		cvs.beginPath();
+		cvs.arc(75,50,25,0,2*Math.PI);
+		cvs.strokeStyle="#fff";
+		cvs.stroke();
+		cvs.fillStyle="#fff";
+		cvs.fill();
+
+		cvs.beginPath();
+		cvs.arc(25,50,25,0,2*Math.PI);
+		cvs.strokeStyle="#000";
+		cvs.stroke();
+		cvs.fillStyle="#000";
+		cvs.fill();
+
+		//黑色小圆
+		cvs.beginPath();
+		cvs.arc(75,50,10,0,2*Math.PI);
+		cvs.strokeStyle="#000";
+		cvs.stroke();
+		cvs.fillStyle="#000";
+		cvs.fill();
+
+		//白色小圆
+		cvs.beginPath();
+		cvs.arc(25,50,10,0,2*Math.PI);
+		cvs.strokeStyle="#fff";
+		cvs.stroke();
+		cvs.fillStyle="#fff";
+		cvs.fill();
+
+
+
+
+		console.log(cvs);
+
+
+
+	</script>
+
+
+  
+ </body>
+</html>
