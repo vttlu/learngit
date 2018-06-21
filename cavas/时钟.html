@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>太极</title>
+ </head>
+ <body>
+ 	 
+	<canvas id="mycanvas"></canvas>
+	<script>
+		var mycanvas=document.getElementById('mycanvas');
+		mycanvas.width="400";
+		mycanvas.height="500";
+		var cvs=mycanvas.getContext("2d");
+		
+		function timer(){
+		var myDate=new Date();
+
+		//分秒钟刻度
+		var x=200,
+			y=200,
+			r=200,
+			myDate=new Date(),
+			hour=myDate.getHours(),
+			second=myDate.getSeconds(),
+			Minute=myDate.getMinutes();
+
+		
+		var M=(-90+second*6)*Math.PI/180;
+		var S=(-90+Minute*6)*Math.PI/180;
+		var H=(-90+hour*6+Minute/2)*Math.PI/180;
+
+
+
+		for (var i = 0; i < 60; i++) {
+			cvs.moveTo(x,y);
+			cvs.arc(x,y,r,i*6*Math.PI/180,(i+1)*6*Math.PI/180);
+		}
+	 	cvs.stroke();
+
+		cvs.beginPath();
+	 	cvs.arc(x,y,r*(18/20),0,2*Math.PI);
+	 	cvs.strokeStyle="#fff";
+	 	cvs.stroke();
+	 	cvs.fillStyle="#fff";
+	 	cvs.fill();
+
+		//时钟刻度
+		cvs.beginPath();
+
+		for (var n = 0; n <12; n++) {
+			cvs.moveTo(x,y);
+			cvs.arc(x,y,r,n*30*Math.PI/180,(n+1)*30*Math.PI/180);
+		}
+		cvs.strokeStyle="#000";
+	 	cvs.stroke();
+
+	 	cvs.beginPath();
+	 	cvs.arc(x,y,r*(16/20),0,2*Math.PI);
+		cvs.strokeStyle="#fff";
+		cvs.stroke();
+		cvs.fillStyle="#fff";
+		cvs.fill();
+
+		//秒钟
+		cvs.beginPath();
+		cvs.moveTo(200,200);
+		cvs.arc(200,200,r*(14/20),S,S);
+		cvs.strokeStyle="#000";
+		cvs.stroke();
+
+		//分钟
+		cvs.beginPath();
+		cvs.moveTo(200,200);
+		cvs.arc(200,200,r*(12/20),M,M);
+		cvs.strokeStyle="#000";
+		cvs.stroke();
+
+		//时针
+		cvs.beginPath();
+		cvs.moveTo(200,200);
+		cvs.arc(200,200,r*(10/20),H,H);
+		cvs.strokeStyle="#000";
+		cvs.stroke();
+	}
+
+
+	timer();
+	setInterval(timer,1000);
+	
+	 
+
+		 
+	</script>
+
+
+  
+ </body>
+</html>
